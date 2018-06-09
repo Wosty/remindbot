@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import time
 
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -17,6 +18,7 @@ def webhook():
   # We don't want to reply to ourselves!
   if data['name'] != 'wosty boi':
     #msg = '{}, you sent "{}".'.format(data['name'], data['text'])
+    time.sleep(1)
     msg = 'Test {}'.format(data['text'])
     send_message(msg)
 
