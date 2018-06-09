@@ -18,8 +18,8 @@ def webhook():
   # We don't want to reply to ourselves!
   if data['name'] != 'wosty boi':
     #msg = '{}, you sent "{}".'.format(data['name'], data['text'])
-    time.sleep(1)
-    msg = 'Test {}'.format(data['text'])
+    time.sleep(2)
+    msg = '{}'.format((int(data['text']))+1)
     send_message(msg)
 
   return "ok", 200
