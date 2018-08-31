@@ -116,7 +116,7 @@ def webhook():
     time.sleep(2)
     msg = 'Y\'all done hoes'
     send_message(msg)
-  elif  data['text'] == '20:00' or data['text'] == '20:30' or data['text'] == '21:00' or data['text'] == '21:30' or data['text'] == '22:00' or data['text'] == '22:30' or data['text'] == '23:00' or data['text'] == '23:30' or data['text'] == '0:00' or data['text'] == '0:30'
+  elif  data['text'] == '20:00' or data['text'] == '20:30' or data['text'] == '21:00' or data['text'] == '21:30' or data['text'] == '22:00' or data['text'] == '22:30' or data['text'] == '23:00' or data['text'] == '23:30' or data['text'] == '0:00' or data['text'] == '0:30':
     time.sleep(2)
     msg = 'Y\'all done hoes'
     if data['text'] == '21:00'
