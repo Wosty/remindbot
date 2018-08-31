@@ -48,23 +48,23 @@ def webhook():
     send_message(msg)
   elif data['text'] == '11:30':
     time.sleep(2)
-    msg = msg + 'MSC: Andrew Bre Gabi Noah\nCommons: Mark Oriana Jonathan \n Sbisa: Creel Cameron Jarrod'
+    msg = msg + 'MSC: Andrew Bre Gabi Noah\nCommons: Mark Oriana Jonathan \nSbisa: Creel Cameron Jarrod'
     send_message(msg)
   elif data['text'] == '12:00':
     time.sleep(2)
-    msg = msg + 'MSC: Andrew Bre Gabi Noah\nCommons: Kourtnei Oriana Mark \n Sbisa: Creel Cameron Jarrod'
+    msg = msg + 'MSC: Andrew Bre Gabi Noah\nCommons: Kourtnei Oriana Mark \nSbisa: Creel Cameron Jarrod'
     send_message(msg)
   elif data['text'] == '12:30':
     time.sleep(2)
-    msg = msg + 'MSC: Andrew Bre Gabi \nCommons: Kourtnei Oriana Mark \n Sbisa: Addie Jarrod'
+    msg = msg + 'MSC: Andrew Bre Gabi \nCommons: Kourtnei Oriana Mark \nSbisa: Addie Jarrod'
     send_message(msg)
   elif data['text'] == '1:00' or data['text'] == '13:00':
     time.sleep(2)
-    msg = msg + 'MSC: Andrew Landon Thayer Gabi \nCommons: Kourtnei Aly Oriana \n Sbisa: Lexi Haley Jonathan'
+    msg = msg + 'MSC: Andrew Landon Thayer Gabi \nCommons: Kourtnei Aly Oriana \nSbisa: Lexi Haley Jonathan'
     send_message(msg)
   elif data['text'] == '1:30' or data['text'] == '13:30':
     time.sleep(2)
-    msg = msg + 'MSC: Andrew Landon Thayer Gabi \nCommons: Kourtnei Aly Oriana \n Sbisa: Lexi Haley Sidney'
+    msg = msg + 'MSC: Andrew Landon Thayer Gabi \nCommons: Kourtnei Aly Oriana \nSbisa: Lexi Haley Sidney'
     send_message(msg)
   elif data['text'] == '2:00' or data['text'] == '14:00':
     time.sleep(2)
@@ -85,8 +85,8 @@ def webhook():
   elif data['text'] == '4:00' or data['text'] == '16:00':
     time.sleep(2)
     msg = msg + 'MSC: Addie Landon Thayer Jonathan Mary Kate\nCommons: Creel Cameron Gabi Noah\nHarrington: Oriana Jarrod Gracie Saul'
-    if data['text'] == '16:00':
-      msg = msg + '\nF*** you, Landon C.'
+    #if data['text'] == '16:00':
+      #msg = msg + '\nF*** you, Landon C.'
     send_message(msg)
   elif data['text'] == '4:30' or data['text'] == '16:30':
     time.sleep(2)
