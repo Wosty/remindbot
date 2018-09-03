@@ -20,77 +20,75 @@ def webhook():
   if data['text'] == '8:00':
     #msg = '{}, you sent "{}".'.format(data['name'], data['text'])
     time.sleep(2)
-    msg = msg + 'MSC: Landon Cameron Wesley \nCommons: Mark Jackson Gabi \nHarrington: Gracie Lexi sophia'
+    msg = msg + 'MSC: Mark Thayer Cole \nCommons: Jackson Cameron \nHarrington: Wesley Noah Jacob'
     send_message(msg)
   elif data['text'] == '8:30':
     time.sleep(2)
-    msg = msg + 'MSC: Landon Jonathan Wesley \nCommons: Mark Jackson Gabi \nHarrington: Gracie Lexi sophia'
+    msg = msg + 'MSC: Cole Thayer Mark \nCommons: Jackson Gabi \nHarrington: Wesley Noah Jacob'
     send_message(msg)
   elif data['text'] == '9:00':
     time.sleep(2)
-    msg = msg + 'MSC: Landon Jonathan Cole Danya\nCommons: Mark Gabi \nHarrington: Gracie Lexi sophia Torey'
+    msg = msg + 'MSC: Kourtnei Thayer Cole \nCommons: Jackson Gabi Torey \nHarrington: Noah Meg Lexi'
     send_message(msg)
   elif data['text'] == '9:30':
     time.sleep(2)
-    msg = msg + 'MSC: Cole Jonathan Danya Mary Kate\nCommons: Mark Gabi \nHarrington: Gracie Lexi sophia Torey'
+    msg = msg + 'MSC: Kourtnei Thayer Cole \nCommons: Jackson Mark Gabi Torey\nHarrington: Lexi Noah Meg'
     send_message(msg)
   elif data['text'] == '10:00':
     time.sleep(2)
-    msg = msg + 'MSC: Danya Cole Mary Kate \nCommons: Meg Mark Jonathan \nHarrington: Addie Lexi Torey'
+    msg = msg + 'MSC: Cole Alec Torey \nCommons: Jackson Mark Danya \nHarrington: Addie Lexi Meg '
     send_message(msg)
   elif data['text'] == '10:30':
     time.sleep(2)
-    msg = msg + 'MSC: Mary Kate Cole Danya \nCommons: Mark Jonathan Meg \nHarrington: Addie Torey Alec Cameron'
+    msg = msg + 'MSC: Cole Cameron Torey \nCommons: Jackson Alec Danya \nHarrington: Addie Meg Wesley'
     send_message(msg)
   elif data['text'] == '11:00':
     time.sleep(2)
-    msg = msg + 'MSC: Bre Mary Kate Cole Danya\nCommons: Mark Jonathan Alec \nSbisa: Cameron Jarrod '
+    msg = msg + 'MSC: Cole Cameron Torey \nCommons: Jackson Jonathan Lexi Danya\nSbisa: Jarrod Mary Kate Jacob'
     send_message(msg)
   elif data['text'] == '11:30':
     time.sleep(2)
-    msg = msg + 'MSC: Andrew Bre Gabi Noah\nCommons: Mark Oriana Jonathan \nSbisa: Creel Cameron Jarrod'
+    msg = msg + 'MSC: Torey Cole Cameron \nCommons: Jonathan Lexi Noah Danya\nSbisa: Jarrod Mary Kate Jacob'
     send_message(msg)
   elif data['text'] == '12:00':
     time.sleep(2)
-    msg = msg + 'MSC: Andrew Bre Gabi Noah\nCommons: Kourtnei Oriana Mark \nSbisa: Creel Cameron Jarrod'
+    msg = msg + 'MSC: Thayer Cole \nCommons: Jonathan Lexi Sidney \nSbisa: Jarrod Mary Kate'
     send_message(msg)
   elif data['text'] == '12:30':
     time.sleep(2)
-    msg = msg + 'MSC: Andrew Bre Gabi \nCommons: Kourtnei Oriana Mark \nSbisa: Addie Jarrod'
+    msg = msg + 'MSC: Oriana Cole Thayer \nCommons: Jonathan Lexi Sidney \nSbisa: Addie Jarrod Mary Kate'
     send_message(msg)
   elif data['text'] == '1:00' or data['text'] == '13:00':
     time.sleep(2)
-    msg = msg + 'MSC: Andrew Landon Thayer Gabi \nCommons: Kourtnei Aly Oriana \nSbisa: Lexi Haley Jonathan'
+    msg = msg + 'MSC: Aly Thayer Oriana \nCommons: Mark Lexi Alec \nSbisa: Jarrod Mary Kate'
     send_message(msg)
   elif data['text'] == '1:30' or data['text'] == '13:30':
     time.sleep(2)
-    msg = msg + 'MSC: Andrew Landon Thayer Gabi \nCommons: Kourtnei Aly Oriana \nSbisa: Lexi Haley Sidney'
+    msg = msg + 'MSC: Aly Thayer Oriana \nCommons: Mark Alec Sidney \nSbisa: Zac Jonathan Mary Kate'
     send_message(msg)
   elif data['text'] == '2:00' or data['text'] == '14:00':
     time.sleep(2)
-    msg = msg + 'MSC: Andrew Landon Thayer Gabi Jacob\nCommons: Kourtnei Aly Bre Oriana\nHarrington: Creel Wesley Lexi Torey'
+    msg = msg + 'MSC: Aly Thayer Oriana \nCommons: Mark Noah Jacob \nHarrington: Creel Zac Saul Torey'
     send_message(msg)
   elif data['text'] == '2:30' or data['text'] == '14:30':
     time.sleep(2)
-    msg = msg + 'MSC: Mary Kate Landon Thayer Gabi Jacob\nCommons: Kourtnei Aly Bre Oriana\nHarrington: Creel Wesley Torey Saul'
+    msg = msg + 'MSC: Aly Thayer Oriana \nCommons: Alec Jonathan Jacob \nHarrington: Zac Creel Torey'
     send_message(msg)
   elif data['text'] == '3:00' or data['text'] == '15:00':
     time.sleep(2)
-    msg = msg + 'MSC: Oriana Landon Thayer Jacob Mary Kate\nCommons: Bre Cameron Gabi Sidney\nHarrington: Addie Gracie Wesley Saul'
+    msg = msg + 'MSC: Aly Thayer Sophia \nCommons: Wesley Jackon Sidney \nHarrington: Addie Zac Creel Torey'
     send_message(msg)
   elif data['text'] == '3:30' or data['text'] == '15:30':
     time.sleep(2)
-    msg = msg + 'MSC: Oriana Landon Thayer Jonathan Mary Kate\nCommons: Bre Cameron Gabi Creel\nHarrington: Addie Gracie Wesley Saul'
+    msg = msg + 'MSC: Thayer Sophia \nCommons: Wesley Jackson Sidney \nHarrington: Addie Zac Creel Torey'
     send_message(msg)
   elif data['text'] == '4:00' or data['text'] == '16:00':
     time.sleep(2)
-    msg = msg + 'MSC: Addie Landon Thayer Jonathan Mary Kate\nCommons: Creel Cameron Gabi Noah\nHarrington: Oriana Jarrod Gracie Saul'
-    #if data['text'] == '16:00':
-      #msg = msg + '\nF*** you, Landon C.'
+    msg = msg + 'MSC: Kourtnei Thayer \nCommons: Addie Wesley Zac \nHarrington: Jarrod Creel'
     send_message(msg)
   elif data['text'] == '4:30' or data['text'] == '16:30':
     time.sleep(2)
-    msg = msg + 'MSC: Addie Landon Thayer Andrew Mary Kate\nCommons: Creel Cameron Gabi Noah\nHarrington: Oriana Jarrod Gracie Saul\n'
+    msg = msg + 'MSC: Kourtnei Thayer \nCommons: Addie Wesley \nHarrington: Jarrod Creel'
     send_message(msg)
   elif data['text'] == '5:00' or data['text'] == '17:00':
     time.sleep(2)
