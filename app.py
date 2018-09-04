@@ -4,6 +4,7 @@ import json
 import time
 import gspread
 
+from oauth2client.service_account import ServiceAccountCredentials
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -11,85 +12,152 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+scope = ['https://spreadsheets.google.com/feeds',
+         'https://www.googleapis.com/auth/drive']
+
+credentials = ServiceAccountCredentials.from_json_keyfile_name('gspread-april-2cd … ba4.json', scope)
+
+gc = gspread.authorize(credentials)
+
 @app.route('/', methods=['POST'])
 def webhook():
   data = request.get_json()
   log('Recieved {}'.format(data))
-
+  
+  sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1xmUic-CfN6tcUVfYfOS2nyHcyNHy8J5XfM5IVO0vStY/edit?usp=sharing')
+  worksheet = sh.getworksheet("Bannerz")
+  
+  
+  
   msg = data['text'] + ' Shifts\n\n'
-  # We don't want to reply to ourselves!
+  dv = [21, 22, 23, 24]
+  
   if data['text'] == '8:00':
     #msg = '{}, you sent "{}".'.format(data['name'], data['text'])
     time.sleep(2)
-    msg = msg + 'MSC: Mark Thayer Cole \nCommons: Jackson Cameron \nHarrington: Wesley Noah Jacob'
+    row = 10
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Harrington: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '8:30':
     time.sleep(2)
-    msg = msg + 'MSC: Cole Thayer Mark \nCommons: Jackson Gabi \nHarrington: Wesley Noah Jacob'
+    row = 13
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Harrington: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '9:00':
     time.sleep(2)
-    msg = msg + 'MSC: Kourtnei Thayer Cole \nCommons: Jackson Gabi Torey \nHarrington: Noah Meg Lexi'
+    row = 16
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Harrington: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '9:30':
     time.sleep(2)
-    msg = msg + 'MSC: Kourtnei Thayer Cole \nCommons: Jackson Mark Gabi Torey\nHarrington: Lexi Noah Meg'
+    row = 19
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Harrington: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '10:00':
     time.sleep(2)
-    msg = msg + 'MSC: Cole Alec Torey \nCommons: Jackson Mark Danya \nHarrington: Addie Lexi Meg '
+    row = 22
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Harrington: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '10:30':
     time.sleep(2)
-    msg = msg + 'MSC: Cole Cameron Torey \nCommons: Jackson Alec Danya \nHarrington: Addie Meg Wesley'
+    row = 25
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Harrington: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '11:00':
     time.sleep(2)
-    msg = msg + 'MSC: Cole Cameron Torey \nCommons: Jackson Jonathan Lexi Danya\nSbisa: Jarrod Mary Kate Jacob'
+    row = 28
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Sbisa: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '11:30':
     time.sleep(2)
-    msg = msg + 'MSC: Torey Cole Cameron \nCommons: Jonathan Lexi Noah Danya\nSbisa: Jarrod Mary Kate Jacob'
+    row = 31
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Sbisa: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '12:00':
     time.sleep(2)
-    msg = msg + 'MSC: Thayer Cole \nCommons: Jonathan Lexi Sidney \nSbisa: Jarrod Mary Kate'
+    row = 34
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Sbisa: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '12:30':
     time.sleep(2)
-    msg = msg + 'MSC: Oriana Cole Thayer \nCommons: Jonathan Lexi Sidney \nSbisa: Addie Jarrod Mary Kate'
+    row = 37
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Sbisa: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '1:00' or data['text'] == '13:00':
     time.sleep(2)
-    msg = msg + 'MSC: Aly Thayer Oriana \nCommons: Mark Lexi Alec \nSbisa: Jarrod Mary Kate'
+    row = 40
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Sbisa: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '1:30' or data['text'] == '13:30':
     time.sleep(2)
-    msg = msg + 'MSC: Aly Thayer Oriana \nCommons: Mark Alec Sidney \nSbisa: Zac Jonathan Mary Kate'
+    row = 43
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Sbisa: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '2:00' or data['text'] == '14:00':
     time.sleep(2)
-    msg = msg + 'MSC: Aly Thayer Oriana \nCommons: Mark Noah Jacob \nHarrington: Creel Zac Saul Torey'
+    row = 46
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Harrington: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '2:30' or data['text'] == '14:30':
     time.sleep(2)
-    msg = msg + 'MSC: Aly Thayer Oriana \nCommons: Alec Jonathan Jacob \nHarrington: Zac Creel Torey'
+    row = 49
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Harrington: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '3:00' or data['text'] == '15:00':
     time.sleep(2)
-    msg = msg + 'MSC: Aly Thayer Sophia \nCommons: Wesley Jackon Sidney \nHarrington: Addie Zac Creel Torey'
+    row = 52
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Harrington: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '3:30' or data['text'] == '15:30':
     time.sleep(2)
-    msg = msg + 'MSC: Thayer Sophia \nCommons: Wesley Jackson Sidney \nHarrington: Addie Zac Creel Torey'
+    row = 55
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Harrington: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '4:00' or data['text'] == '16:00':
     time.sleep(2)
-    msg = msg + 'MSC: Kourtnei Thayer \nCommons: Addie Wesley Zac \nHarrington: Jarrod Creel'
+    row = 58
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Harrington: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '4:30' or data['text'] == '16:30':
     time.sleep(2)
-    msg = msg + 'MSC: Kourtnei Thayer \nCommons: Addie Wesley \nHarrington: Jarrod Creel'
+    row = 61
+    msg = msg + 'MSC: ' + worksheet.cell(row, dv(0)) + ' ' + worksheet.cell(row, dv(1)) + ' ' + worksheet.cell(row, dv(2)) + ' ' + worksheet.cell(row, dv(3))
+    msg = msg + 'Commons: '  + worksheet.cell(row+1, dv(0)) + ' ' + worksheet.cell(row+1, dv(1)) + ' ' + worksheet.cell(row+1, dv(2)) + ' ' + worksheet.cell(row+1, dv(3))
+    msg = msg + 'Harrington: '  + worksheet.cell(row+2, dv(0)) + ' ' + worksheet.cell(row+2, dv(1)) + ' ' + worksheet.cell(row+2, dv(2)) + ' ' + worksheet.cell(row+2, dv(3))
     send_message(msg)
   elif data['text'] == '5:00' or data['text'] == '17:00':
     time.sleep(2)
