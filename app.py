@@ -189,7 +189,7 @@ def webhook():
     if data['text'] == '21:00':
       msg = 'A A A A AAAAA\n' + msg
     send_message(msg)
-  elif ':' in data['text'][:4]
+  elif ':' in data['text'][:4]:
     faceList = open('faces.txt','r').readlines()
     msg = random.choice(faceList).strip('\n')
     send_message(msg)
