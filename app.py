@@ -25,7 +25,7 @@ def webhook():
   log('Recieved {}'.format(data))
   
   sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1xmUic-CfN6tcUVfYfOS2nyHcyNHy8J5XfM5IVO0vStY/edit?usp=sharing')
-  worksheet = sh.getworksheet("Bannerz")
+  worksheet = sh.worksheet("Bannerz")
   
   
   
