@@ -31,6 +31,7 @@ def webhook():
   
   msg = data['text'] + ' Shifts\n\n'
   dv = [21, 22, 23, 24]
+  dv = [int(i) for i in dv]
   
   if data['text'] == '8:00':
     #msg = '{}, you sent "{}".'.format(data['name'], data['text'])
