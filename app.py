@@ -15,7 +15,7 @@ app = Flask(__name__)
 scope = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
 
-credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+credentials = ServiceAccountCredentials.from_p12_keyfile('credentials.p12', scope, 'PASSWORD')
 
 gc = gspread.authorize(credentials)
 
