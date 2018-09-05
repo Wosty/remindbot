@@ -18,11 +18,11 @@ scope = ['https://spreadsheets.google.com/feeds',
 
 credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
 
-msg = ''
 gc = gspread.authorize(credentials)
 if credentials.access_token_expired:
   gc.login()
   msg = '*'
+  send_message(msg)
 
 @app.route('/', methods=['POST'])
 def webhook():
