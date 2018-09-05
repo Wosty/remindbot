@@ -160,36 +160,6 @@ def webhook():
     msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
-  elif data['text'] == '5:00' or data['text'] == '17:00':
-    time.sleep(2)
-    msg = 'Y\'all done hoes'
-    send_message(msg)
-  elif data['text'] == '5:30' or data['text'] == '17:30':
-    time.sleep(2)
-    msg = 'Y\'all done hoes'
-    send_message(msg)
-  elif data['text'] == '6:00' or data['text'] == '18:00':
-    time.sleep(2)
-    msg = 'Y\'all done hoes'
-    send_message(msg)
-  elif data['text'] == '6:30' or data['text'] == '18:30':
-    time.sleep(2)
-    msg = 'Y\'all done hoes'
-    send_message(msg)
-  elif data['text'] == '7:00' or data['text'] == '19:00':
-    time.sleep(2)
-    msg = 'Y\'all done hoes'
-    send_message(msg)
-  elif data['text'] == '7:30' or data['text'] == '19:30':
-    time.sleep(2)
-    msg = 'Y\'all done hoes'
-    send_message(msg)
-  elif  data['text'] == '20:00' or data['text'] == '20:30' or data['text'] == '21:00' or data['text'] == '21:30' or data['text'] == '22:00' or data['text'] == '22:30' or data['text'] == '23:00' or data['text'] == '23:30' or data['text'] == '0:00' or data['text'] == '0:30':
-    time.sleep(2)
-    msg = 'Y\'all done hoes'
-    if data['text'] == '21:00':
-      msg = 'A A A A AAAAA\n' + msg
-    send_message(msg)
   elif ':' in data['text'][:4] and data['sender_type'] != 'bot':
     faceList = open('faces.txt','r').readlines()
     msg = random.choice(faceList).strip('\n')
