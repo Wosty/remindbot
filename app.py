@@ -162,7 +162,7 @@ def webhook():
     msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
-  elif ':' in data['text'][:4] and data['sender_type'] != 'bot':
+  elif ':' in data['text'][:5] and data['sender_type'] != 'bot':
     faceList = open('faces.txt','r').readlines()
     msg = random.choice(faceList).strip('\n')
     send_message(msg)
