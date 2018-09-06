@@ -34,7 +34,7 @@ def webhook():
   
   
   msg = data['text'] + ' Shifts\n\n'
-  dv = [29, 30, 31, 32]
+  dv = [31, 32, 33, 34]
   dv = [int(i) for i in dv]
   
   if data['text'] == '8:00':
