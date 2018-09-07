@@ -26,7 +26,7 @@ def webhook():
   worksheet = sh.worksheet("Bannerz")
   
   
-  msg = data['text'] + ' Shifts\n\n'
+  msg = data['text'] + ' Shifts\n'
   dv = [35, 36, 37, 38]
   dv = [int(i) for i in dv]
   
