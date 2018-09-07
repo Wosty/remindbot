@@ -34,7 +34,7 @@ def webhook():
   
   
   msg = data['text'] + ' Shifts\n\n'
-  dv = [31, 32, 33, 34]
+  dv = [35, 36, 37, 38]
   dv = [int(i) for i in dv]
   
   if data['text'] == '8:00':
@@ -42,126 +42,108 @@ def webhook():
     time.sleep(2)
     row = 10
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '8:30':
     time.sleep(2)
     row = 13
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '9:00':
     time.sleep(2)
     row = 16
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '9:30':
     time.sleep(2)
     row = 19
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '10:00':
     time.sleep(2)
     row = 22
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '10:30':
     time.sleep(2)
     row = 25
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '11:00':
     time.sleep(2)
     row = 28
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nSbisa: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '11:30':
     time.sleep(2)
     row = 31
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nSbisa: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '12:00':
     time.sleep(2)
     row = 34
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nSbisa: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '12:30':
     time.sleep(2)
     row = 37
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nSbisa: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '1:00' or data['text'] == '13:00':
     time.sleep(2)
     row = 40
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nSbisa: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '1:30' or data['text'] == '13:30':
     time.sleep(2)
     row = 43
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nSbisa: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '2:00' or data['text'] == '14:00':
     time.sleep(2)
     row = 46
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '2:30' or data['text'] == '14:30':
     time.sleep(2)
     row = 49
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '3:00' or data['text'] == '15:00':
     time.sleep(2)
     row = 52
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '3:30' or data['text'] == '15:30':
     time.sleep(2)
     row = 55
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '4:00' or data['text'] == '16:00':
     time.sleep(2)
     row = 58
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif data['text'] == '4:30' or data['text'] == '16:30':
     time.sleep(2)
     row = 61
     msg = msg + 'MSC: ' + worksheet.cell(row, dv[0]).value + ' ' + worksheet.cell(row, dv[1]).value + ' ' + worksheet.cell(row, dv[2]).value + ' ' + worksheet.cell(row, dv[3]).value
-    msg = msg + '\nZachry: '  + worksheet.cell(row+1, dv[0]).value + ' ' + worksheet.cell(row+1, dv[1]).value + ' ' + worksheet.cell(row+1, dv[2]).value + ' ' + worksheet.cell(row+1, dv[3]).value
     msg = msg + '\nHarrington: '  + worksheet.cell(row+2, dv[0]).value + ' ' + worksheet.cell(row+2, dv[1]).value + ' ' + worksheet.cell(row+2, dv[2]).value + ' ' + worksheet.cell(row+2, dv[3]).value
     send_message(msg)
   elif ':' in data['text']:
