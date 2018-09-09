@@ -25,9 +25,15 @@ def webhook():
   sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1xmUic-CfN6tcUVfYfOS2nyHcyNHy8J5XfM5IVO0vStY/edit?usp=sharing')
   worksheet = sh.worksheet("Interview Staff Sign Ups")
   
+  if ':' not in data['text']
+    return "ok", 200
   
   msg = data['text'] + ' Shifts\n'
-  row = [int(worksheet.find((data['text']).strip()).row)]
+  given = data['text'].strip().split(':')
+  if given[0] != 12
+    given[0] = given[0]%12
+  time = given[0] + ':' + given[1]
+  row = [int(worksheet.find(time).row)]
   dv = [2, 3, 4]
   dv = [int(i) for i in dv]
   msg = msg + 'Chair/Exec:'
