@@ -34,6 +34,7 @@ def webhook():
   if given[0] != 12:
     given[0] = given[0]%12
   time = str(given[0]) + ':' + str(given[1])
+  log(time)
   row = [int(worksheet.find(time).row)]
   dv = [2, 3, 4]
   dv = [int(i) for i in dv]
