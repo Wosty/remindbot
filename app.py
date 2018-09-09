@@ -36,7 +36,7 @@ def webhook():
   msg = msg + '\n'
   row = [row[0]+1, row[0]+2]
   for i in dv:
-    msg = msg + worksheet.cell(2, i) + ':'
+    msg = msg + worksheet.cell(2, i).value + ':'
     for j in row:
       msg = msg + ' ' + worksheet.cell(j, i).value
     msg = msg + '\n'
