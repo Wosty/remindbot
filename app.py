@@ -30,10 +30,9 @@ def webhook():
   row = [int(worksheet.find((data['text']).strip()).row)]
   dv = [2, 3, 4]
   dv = [int(i) for i in dv]
-  row = [int(i) for i in row]
   msg = msg + 'Chair/Exec:'
   for i in dv:
-    msg = msg + ' ' + worksheet.cell(row, i).value
+    msg = msg + ' ' + worksheet.cell(row[0], i).value
   msg = msg + '\n'
   row = [row[0]+1, row[0]+2]
   for i in dv:
