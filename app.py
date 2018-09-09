@@ -30,10 +30,10 @@ def webhook():
   
   msg = data['text'] + ' Shifts\n'
   given = data['text'].strip().split(':')
-  given = [int(i) for i in given]
+  given[0] = int(given[0])
   if given[0] != 12:
     given[0] = given[0]%12
-  time = str(given[0]) + ':' + str(given[1])
+  time = str(given[0]) + ':' + given[1]
   log(time)
   row = [int(worksheet.find(time).row)]
   dv = [2, 3, 4]
