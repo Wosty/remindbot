@@ -35,7 +35,7 @@ def webhook():
   for i in dv:
     msg = msg + worksheet.cell(2, i) + ':'
     for j in row:
-      msg = msg + ' ' + worksheet.cell(j, i]).value
+       msg = msg + ' ' + worksheet.cell(j, i]).value
     msg = msg + '\n'
   faceList = open('faces.txt','r').readlines()
   msg = msg + random.choice(faceList).strip('\n')
