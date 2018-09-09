@@ -28,7 +28,7 @@ def webhook():
   
   msg = data['text'] + ' Shifts\n'
   row = [worksheet.find((data['text']).strip()).row()]
-  msg = msg + 'Chair/Exec: ' + worksheet.cell(row, i) + '\n'
+  msg = msg + 'Chair/Exec: ' + worksheet.cell(row, i).value + '\n'
   row = [row[0]+1, row[0]+2]
   dv = [2, 3, 4]
   dv = [int(i) for i in dv]
