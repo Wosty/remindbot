@@ -30,6 +30,7 @@ def webhook():
   
   msg = data['text'] + ' Shifts\n'
   given = data['text'].strip().split(':')
+  given = [int(i) for i in given]
   if given[0] != 12:
     given[0] = given[0]%12
   time = given[0] + ':' + given[1]
