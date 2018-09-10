@@ -26,9 +26,7 @@ def webhook():
   worksheet = sh.worksheet("Interview Staff Sign Ups")
   dv = [2, 3, 4]
   dv = [int(i) for i in dv]
-  if ':' not in data['text']:
-    return "ok", 200
-  elif data['text'] == 'Overview:' and data['sender_type'] == 'bot':
+  if data['text'] == 'Overview:' and data['sender_type'] == 'bot':
     people = []
     for i in dv:
       for j in range(6,96):
@@ -41,6 +39,8 @@ def webhook():
     for i in final_list:
       msg = msg + i + ' '
     send_message(msg)
+    return "ok", 200
+  elif ':' not in data['text']:
     return "ok", 200
   
   msg = data['text'] + ' Shifts\n'
