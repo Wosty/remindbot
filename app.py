@@ -29,8 +29,7 @@ def webhook():
   if data['text'] == 'Overview:' and data['sender_type'] == 'bot':
     people = []
     for i in dv:
-      for j in range(6,96):
-        people.append(worksheet.cell(j, i).value)
+      people.append(worksheet.col_values(i, 'UNFORMATTED_VALUE'))
     final_list = [] 
     for num in people: 
       if num not in final_list: 
