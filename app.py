@@ -24,8 +24,23 @@ def webhook():
   
   sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1xmUic-CfN6tcUVfYfOS2nyHcyNHy8J5XfM5IVO0vStY/edit?usp=sharing')
   worksheet = sh.worksheet("Interview Staff Sign Ups")
-  
+  dv = [2, 3, 4]
+  dv = [int(i) for i in dv]
   if ':' not in data['text']:
+    return "ok", 200
+  elif data['text'] == 'Overview:' and data['sender_type'] == 'bot':
+    people = []
+    for i in dv:
+      for j in range(6,96):
+        people.append(worksheet.cell(j, i).value)
+    final_list = [] 
+    for num in people: 
+      if num not in final_list: 
+        final_list.append(num)
+    msg = 'People scheduled to interview tomorrow: \n'
+    for i in final_list:
+      msg = msg + i + ' '
+    send_message(msg)
     return "ok", 200
   
   msg = data['text'] + ' Shifts\n'
@@ -35,8 +50,6 @@ def webhook():
     given[0] = given[0]%12
   time = str(given[0]) + ':' + given[1]
   row = [int(worksheet.find(time).row)]
-  dv = [2, 3, 4]
-  dv = [int(i) for i in dv]
   msg = msg + 'Chair/Exec:'
   for i in dv:
     msg = msg + ' ' + worksheet.cell(row[0], i).value
