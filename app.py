@@ -36,7 +36,7 @@ def webhook():
         final_list.append(num)
     msg = 'People scheduled to interview tomorrow: \n'
     for i in final_list:
-      msg = msg + i + ', '
+      msg = msg + str(i) + ', '
     send_message(msg)
     return "ok", 200
   elif ':' not in data['text']:
