@@ -24,16 +24,16 @@ def webhook():
   
   sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1xmUic-CfN6tcUVfYfOS2nyHcyNHy8J5XfM5IVO0vStY/edit?usp=sharing')
   worksheet = sh.worksheet("Interview Staff Sign Ups")
-  dv = [5, 6, 7]
+  dv = [8, 9, 10]
   dv = [int(i) for i in dv]
   if data['text'] == 'Overview:' and data['sender_type'] == 'bot':
     people = []
     for i in dv:
       people.append(worksheet.col_values(i, 'UNFORMATTED_VALUE'))
     final_list = [] 
-    for num in people: 
-      if num not in final_list: 
-        final_list.append(num)
+    for x in people: 
+      if x not in final_list: 
+        final_list.append(x)
     msg = 'People scheduled to interview tomorrow: \n'
     for i in final_list:
       msg = msg + str(i) + ', '
@@ -50,7 +50,10 @@ def webhook():
     given[0] = given[0]%12
   time = str(given[0]) + ':' + given[1]
   row = [int(worksheet.find(time).row)]
-  msg = msg + 'Chair/Exec:'
+  if 'son' in str(worksheet.cell(row[0], i).value):
+    msg = msg + 'Super Mega President Overlord:'
+  else
+    msg = msg + 'Chair/Exec:'
   for i in dv:
     msg = msg + ' ' + worksheet.cell(row[0], i).value
   msg = msg + '\n'
