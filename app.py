@@ -52,7 +52,7 @@ def webhook():
   row = [int(worksheet.find(time).row)]
   if 'son' in str(worksheet.cell(row[0], i).value):
     msg = msg + 'Super Mega President Overlord:'
-  else
+  else:
     msg = msg + 'Chair/Exec:'
   for i in dv:
     msg = msg + ' ' + worksheet.cell(row[0], i).value
