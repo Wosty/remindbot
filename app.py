@@ -24,7 +24,7 @@ def webhook():
   
   sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1xmUic-CfN6tcUVfYfOS2nyHcyNHy8J5XfM5IVO0vStY/edit?usp=sharing')
   worksheet = sh.worksheet("Interview Staff Sign Ups")
-  dv = [11, 12]
+  dv = [13, 14]
   dv = [int(i) for i in dv]
   if data['text'] == 'Overview:' and data['sender_type'] == 'bot':
     people = []
