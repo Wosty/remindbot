@@ -1,4 +1,4 @@
-# remindboi
+# remindbot
 This project is a GroupMe bot which would respond to a message containing the time slot by taking info from a Google Sheet (used to sign up for various shifts for my organizations recruitment) with the corresponding people signed up.
 
 The code was linked to Heroku (a web app hosting services) and the app link was set as the callback URL for the GroupMe bot.
